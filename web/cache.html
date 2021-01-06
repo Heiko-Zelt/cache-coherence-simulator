@@ -1,0 +1,87 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>VI/MSI/MESI/MOSI/MOESI cache coherence</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+      integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2"
+      crossorigin=""></script>
+    <script src="hardware.js"></script>
+	<script src="cacheUI.js"></script>
+	<link rel="stylesheet" href="cache.css">
+  </head>
+  <body>
+    <h1>VI/MSI/MESI/MOSI/MOESI cache coherence protocol simulator</h1>
+
+    <table><tr><td>
+    <div id="clock">
+      <h2>clock</h2>
+	  <p>time: <span id="time">loading...</span></p>
+	</div>
+	</td></tr>
+	<tr><td>
+	<div id="cpusAndCaches">loading...</div>
+	</td></tr>
+	<tr><td>
+	<div id="bus">
+	  <h2>bus</h2>
+	  <p id="busMessages"></p>
+	</div>
+	</td></tr>
+	<tr><td>
+	<div class="wire"><img alt="Linien" src="parallel_vertical_lines.svg"></div>
+	</tr></td>
+	<tr><td>
+	<div id="mem">loading...</div>
+	</td></tr></table>
+    <p>
+    <form id="resetForm">
+	  system:
+      <label for="protocol">protocol:</label>
+	  <select id="protocol" size="1">
+	    <option value="1">no cache</option>
+        <option value="2">VI</option>
+		<option value="3" selected="selected">MSI</option>
+		<option value="4">MESI</option>
+		<option value="5">MOSI</option>
+		<option value="6">MOESI</option>
+      </select>,
+	  
+      <label for="numberOfCpus">CPUs:</label>
+	  <select id="numberOfCpus" size="1">
+        <option>1</option><option>2</option><option selected="selected">3</option><option>4</option>
+      </select>,
+
+      <label for="numberOfCacheLines">cache lines:</label>
+	  <select id="numberOfCacheLines" size="1">
+        <option>1</option><option>2</option><option selected="selected">3</option><option>4</option>
+      </select>,
+	 
+	  <label for="numberOfMemoryLines">memory lines:</label>
+	  <select id="numberOfMemoryLines" size="1">
+        <option>4</option><option>8</option><option>12</option><option selected="selected">16</option><option>20</option><option>24</option><option>32</option>
+      </select>,
+
+	  <label for="offsetBits">offset bits:</label>
+	  <select id="offsetBits" size="1">
+        <option>0</option><option>1</option><option selected="selected">2</option><option>3</option><option>4</option>
+      </select>
+      <button type="button" id="changeButton">change</button>
+	  <button type="button" id="defaultButton">default</button>
+    </form>
+	
+    <form id="numberSystemForm">view:
+      <label for="numberSystem">address number system:</label>
+	  <select id="numberSystem" size="1">
+        <option value="2">binary 0...1</option><option value="8">octal 0...7</option><option value="10" selected="selected">decimal 0...9</option><option value="16">hexadecimal 0...F</option>
+      </select>
+	  <button type="button" id="numberSystemChangeButton">change</button>
+	  <button type="button" id="numberSystemDefaultButton">default</button>
+    </form>
+    </p>
+	<p>cache coherence protocols in multiprocessor systems<br>
+	using fully associative caches
+	with least recently used (LRU) replacement policy
+	and atomic transactions</p>
+    <p>imprint: Heiko Zelt, Uhlandstr. 16, 65189 Wiesbaden, WhatsApp/phone: +49 157 30 62 60 35, e-mail: hz (ät) heikozelt (dot) de</p>
+  </body>
+</html>

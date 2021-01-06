@@ -1,0 +1,50 @@
+h2 {
+  padding: 0px;
+  margin: 0px;
+}
+
+table, th, td, tr, div, form {
+  padding: 0px;
+  margin: 0px;
+  border-width: 0px none;
+  border-collapse: collapse;
+  vertical-align: top;
+}
+
+.cache table th, .cache table td, #mem table th, #mem table td, .cpu table td {
+  /* border-collapse: separate; */
+  padding: 0px 2px 0px 2px;
+}
+
+.changed {
+  background: #ffaaaa;
+}
+
+.read {
+  background: #ffff00;
+}
+
+.read_and_changed {
+  background: #ffcc55;
+}
+
+.wire {
+  text-align: center;
+}
+
+#mem, #clock, .cpu, .cache, #bus {
+  border: 1px solid #aaa;
+  /* border: 0px none; */
+  margin: 0px 4px 0px 4px;
+  padding: 4px;
+  /* background-color: #f0f0f0; */
+}
+
+#clock {
+  float: left;
+  border: 1px solid #aaa;
+  /* border: 0px none; */
+  margin: 0px 4px 8px 4px;
+  padding: 4px;
+  /* background-color: #f0f0f0; */
+}
