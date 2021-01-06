@@ -102,7 +102,7 @@ class MemoryView {
 	let selector = '#cell_' + adr
 	let value = this.memory.data[adr]
 	//console.log("DEBUG " + selector + "=" + value)
-	$(selector).html(value)
+	$(selector).text(value)
 	$(selector).filter('.read').addClass('read_and_changed')
 	$(selector).not('.read').addClass('changed')
   }
@@ -308,7 +308,7 @@ class CacheView {
 	let selector = '#index_' + this.cacheId + '_' + lineNumber + '_' + index
 	let value = this.cache.cacheLines[lineNumber].values[index]
 	//console.log("DEBUG " + selector + "=" + value)
-	$(selector).html(value)
+	$(selector).text(value)
 	//$(selector).addClass('changed')
 	$(selector).filter('.read').addClass('read_and_changed')
 	$(selector).not('.read').addClass('changed')
